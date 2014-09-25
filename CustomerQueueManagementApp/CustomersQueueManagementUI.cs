@@ -18,7 +18,7 @@ namespace CustomerQueueManagementApp
             InitializeComponent();
         }
 
-        Queue<Customer> complainQueue = new Queue<Customer>();
+        Queue<Customer> customersQueue = new Queue<Customer>();
         
         int serialNo=1;     
         private void enqueueButton_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace CustomerQueueManagementApp
             anCustomer.id = serialNo;
             anCustomer.name = enquNameTextBox.Text;
             anCustomer.complain = enquComplainTextBox.Text;
-            complainQueue.Enqueue(anCustomer);
+            customersQueue.Enqueue(anCustomer);
 
             ListViewItem items = new ListViewItem(serialNo.ToString());
             items.SubItems.Add(enquNameTextBox.Text);
@@ -47,7 +47,7 @@ namespace CustomerQueueManagementApp
             if (complainQueue.Count !=0)
             {
 
-                Customer anCustomer = complainQueue.Dequeue();
+                Customer anCustomer = customersQueue.Dequeue();
                 dequSerialTextBox.Text = anCustomer.id.ToString();
                 dequNameTextBox.Text = anCustomer.name;
                 dequCompTextBox.Text = anCustomer.complain;
