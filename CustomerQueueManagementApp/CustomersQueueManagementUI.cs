@@ -30,9 +30,9 @@ namespace CustomerQueueManagementApp
             anCustomer.complain = enquComplainTextBox.Text;
             customersQueue.Enqueue(anCustomer);
 
-            ListViewItem items = new ListViewItem(serialNo.ToString());
-            items.SubItems.Add(enquNameTextBox.Text);
-            items.SubItems.Add(enquComplainTextBox.Text);
+            ListViewItem items = new ListViewItem(anCustomer.id.ToString());
+            items.SubItems.Add(anCustomer.name);
+            items.SubItems.Add(anCustomer.complain);
             queueList.Items.Add(items);
 
             enquNameTextBox.Text = string.Empty;
